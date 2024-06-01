@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Station Code and Name Selection</title>
+  <link rel="stylesheet" href="admin_styles.css">
+</head>
+<body background="image/background.jpg">
+	<div class="glass-container">
+		<form method="post" action="AddFlightServlet">
+			<div class="form-row">
+				  <label for="FlightCodeDropdown">Flight Code:</label>
+				  <select id="FlightCodeDropdown" name="flightcode">
+				    <option value="AI">AI</option>
+				    <option value="UK">UK</option>
+				    <option value="SG">SG</option>
+				    <option value="6E">6E</option>
+				    <option value="I5">I5</option>
+				    <option value="DKN">DKN</option>
+				    <option value="QP">QP</option>
+				    <option value="G8">G8</option>
+				    <option value="AX">AX</option>
+				    <option value="9I">9I</option>
+				    <!-- Add more station code options as needed -->
+				  </select>
+		  
+			  	<label for="SerialInput">Serial Number:</label>
+	        	<input type="text" id="SerialInput" name="serial">
+			
+			  <label for="FlightNameDropdown">Station Name:</label>
+			  <select id="FlightNameDropdown" name="flightname">
+			    <option value="AirIndia">Air India</option>
+			    <option value="Vistara">Vistara</option>
+			    <option value="SpiceJet">SpiceJet</option>
+			    <option value="IndiGo">IndiGo</option>
+			    <option value="AirIndiaExpress">AirIndia Express</option>
+			    <option value="DeccanCharters">Deccan Charters</option>
+			    <option value="AkashAir">Akash Air</option>
+			    <option value="GoAir">GoAir</option>
+			    <option value="AIXConnect">AIX Connect</option>
+			    <option value="AllianceAir">Alliance Air</option>
+			  </select>
+		  
+		  </div>
+		  
+		  <div class="form-row-1">
+	        <input type="text" id="SourceInput" name="Source"  placeholder="Source">
+	        <input type="text" id="DestinationInput" name="destination"  placeholder="Destination">
+	      </div>
+
+		<br>
+      <div class="form-row">
+        <input type="text" id="DepartureInput" name="departure" placeholder="Departure">
+        <input type="text" id="ArrivalInput" name="arrival" placeholder="Landing">
+        <input type="text" id="TimeInput" name="time" placeholder="Journey Time">
+      </div>
+
+      <div class="row-gap">
+        <p><span style="color: darkslateblue;">Fare :</span></p>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="EconomyInput" name="economy" placeholder="Economy">
+        <input type="text" id="BusinessInput" name="business" placeholder="Business">
+        <input type="text" id="PremEcoInput" name="premeco" placeholder="Premium Economy">
+      </div>
+
+      <div class="row-gap">
+        <p><span style="color: darkslateblue;">Seat Availability in each class :</span></p>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="EcoSeatInput" name="ecoseat" placeholder="Economy">
+        <input type="text" id="BusiSeatInput" name="busiseat" placeholder="Business">
+        <input type="text" id="PremEcoSeatInput" name="premecoseat" placeholder="Premium Economy">
+      </div>
+      
+      <br>
+		  <div class="button-container">
+		  	<input type="submit" value="Add Flight" class="rounded-button">
+		  </div>
+		</form>
+		
+		<br>
+		<div class="button-container">
+			<form method="post" action="AdminSignIn.html">
+				<a href="AdminSignIn.html"
+		            class="cancel-link"
+		            style="text-decoration: none; color: black;"
+		            onmouseover="this.style.color='#777'; this.style.textDecoration='underline';"
+		            onmouseout="this.style.color='black'; this.style.textDecoration='none';">
+		            Sign Out
+		        </a>
+			</form>
+		</div>
+		<script>
+		  const flightCodes = {
+		    'AI': 'AirIndia',
+		    'UK': 'Vistara',
+		    'SG': 'SpiceJet',
+		    '6E': 'IndiGo',
+		    'I5': 'AirIndiaExpress',
+		    'DKN':'DeccanCharters',
+		    'QP': 'AkashAir',
+		    'G8': 'GoAir',
+		    'AX': 'AIXConnect',
+		    '9I': 'AllianceAir'
+		    // Add more mappings as needed
+		  };
+		
+		  const FlightCodeDropdown = document.getElementById('FlightCodeDropdown');
+		  const FlightNameDropdown = document.getElementById('FlightNameDropdown');
+		
+		  FlightCodeDropdown.addEventListener('change', syncDropdowns);
+		
+		  function syncDropdowns() {
+		    const selectedCode = FlightCodeDropdown.value;
+		    FlightNameDropdown.value = flightCodes[selectedCode];
+		  }
+		
+		  // Initially sync dropdowns on page load
+		  syncDropdowns();
+		</script>
+		
+		</form>
+		
+	</div>
+</html>

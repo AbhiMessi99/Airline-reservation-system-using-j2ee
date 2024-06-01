@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Registration</title>
+    <link rel="stylesheet" href="register_styles.css">
+    <link rel="icon" sizes="180x180" href="image/title.png">
+</head>
+<body background="image/background.jpg">
+    <div class="container">
+		 <img src="image/Air_Trips.png" alt="Company Logo" class="logo">
+	        
+
+        <form method="post" action="RegisteredServlet" class="glass-container">
+            <div class="form-grid">
+                <input type="text" name="fname" placeholder="First Name" required>
+                <input type="text" name="Lname" placeholder="Last Name" required>
+                <input type="text" name="RegUsername" placeholder="User Name" required>
+                <input type="password" name="RegPassword" placeholder="Password" required>
+                <input type="text" name="Mobile" placeholder="Mobile Number" required>
+                <input type="text" name="email" placeholder="Email">
+            </div>
+
+            	<input type="text" name="address" placeholder="Address" required class="full-width">
+
+            <div class="button-container">
+                <input type="submit" value="Sign Up" class="rounded-button">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
